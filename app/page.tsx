@@ -1,9 +1,10 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <main className="">
-      Let's build an AI Notion Clone
+      Lets build an AI Notion Clone
+      <Button>Click Me!</Button>
     </main>
   );
 }

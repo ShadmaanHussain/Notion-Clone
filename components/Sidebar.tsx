@@ -75,13 +75,30 @@ function Sidebar() {
         editor: [],
       }
     );
+
+    setGroupedData(grouped);
   }, [data]);
 
   const menuOptions = (
     <>
       <NewDocumentButton />
-
-      {/* My Documents */}
+      <div className="flex py-4 flex-col space-y-4 md:max-w-36">
+        {/* My Documents */}
+        {groupedData.owner.length === 0 ? (
+          <h2 className="text-gray-500 font-semibold text-sm">
+            No Documents Found
+          </h2>
+        ) : (
+          <>
+            <h2 className="text-gray-500 font-semibold text-sm">
+              My Documents
+            </h2>
+            {groupedData.owner.map((doc) => (
+              <p key={doc.roomId}>{doc.roomId}</p>
+            ))}
+          </>
+        )}
+      </div>
       {/* List... */}
 
       {/* Shared with me */}

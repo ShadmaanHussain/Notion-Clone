@@ -7,6 +7,7 @@ import {
 } from "@clerk/clerk-react";
 import { useUser } from "@clerk/nextjs";
 import React from "react";
+import Breadcrumbs from "./Breadcrumbs";
 
 function Header() {
   const { user } = useUser();
@@ -20,6 +21,7 @@ function Header() {
       )}
 
       {/* Breadcrumbs */}
+      <Breadcrumbs />
       <div>
         {/* If User is signed out this the SignedOut component is rendered otherwise SignedIn component is rendered. */}
         <SignedOut>
